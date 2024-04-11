@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>스핀박스 (number 태그)</h3>
+    <!-- ul>(li>input[type="checkbox" value=""]+input[type="checkbox" min="0" max="0"])*2 -->
+    <ul>
+        <li>
+            <label><input type="checkbox" value="s_3">선물용 3kg</label>
+            <input type="number" min="0" max="5">개 (최대5개)
+        </li>
+        <li>
+            <label><input type="checkbox" value="s_5">선물용 5kg</label>
+            <input type="number" min="0" max="3" value="1">개 (최대3개)
+        </li>
+    </ul>
+
+    <hr>
+    <!-- ul>(li>label>input[type="checkbox" value=""]+input[type="rang" min="" max=""])*2 -->
+    <h3>슬라이드 막개 (range 태그)</h3>
+    <ul>
+        <li>
+            <label><input type="checkbox" value="f_3">가정용 3kg</label>
+            <input type="range" min="0" max="5">개 (최대 5개)
+        </li>
+        <li>
+            <label><input type="checkbox" value="f_5">가정용 5kg</label>
+                <input type="range" min="0" max="3" value="1">개 (최대 3개)
+            </li>
+    </ul>
+    
+    <hr>
+    <h3>3가지 형식의 날짜 지정하기</h3>
+    <input type="date"><br>
+    <input type="month"><br>
+    <input type="week"><br>
+    
+    <hr>
+    <h3>2가지 형식의 시간 지정하기</h3>
+    <input type="time"><br>
+    <input type="datetime-local">
+
+    <hr>
+    <h3>이미지 버튼 추가하기</h3>
+    <!-- fieldset>(lavel>input[type="" id="" size=""])*2>input[type="image" src="../images/login.png" alt="로그인"] -->
+    <fieldset>
+        <lavel>아이디: <input type="text" id="user_id" size="10"></lavel>
+        <lavel>비밀번호: <input type="password" id="user_pw" size="10"></lavel>
+        <input type="image" src="../images/login.png" alt="로그인">
+    </fieldset>
+
+    <hr>
+    <form>
+        <input type="button" value="공지 창 열기" onclick="window.open('ex01.html')">
+    </form>
+
+    <hr>
+        <input type="file">
+</body> 
+</html>
