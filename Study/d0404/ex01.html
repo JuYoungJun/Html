@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>인접 관계 선택자</h1>
+        <p>내용1</p>
+        <p class="txt">내용2</p>
+        <p>내용3</p>
+        <p>내용4</p>
+    </div>
+    <script>
+        $(function () {
+            var style_1 = {
+                "background-color": "#0ff",
+                "border": "2px solid #f00"
+            }
+
+            let style_2 = {
+                "background-color": "#ff0",
+                "border": "2px dashed #f00"
+            }
+
+            $(".txt").prevAll().css(style_1);//선택요소 이전
+
+            $(".txt").nextAll().css(style_2);//선택용소 이후
+
+            // $(".txt").siblings().css(style_2); 전체형제 요소 선택자
+        })
+    </script>
+</body>
+
+</html>

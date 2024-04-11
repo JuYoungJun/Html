@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.문제</title>
+</head>
+<body>
+    <script>
+        let name = prompt("별 찍을 개수");
+        let n = '';
+
+        for(let i = 0; i < name; i++){
+            let star = '';
+            for(let j = 1; j < name - i; j++){
+                star += " ";
+            }
+            for(let j = 1; j <= (2*(i + 1))-1; j++){
+                star += '*';
+            }
+            n += star + '\n'
+        }
+        console.log(n)
+
+        // console.log(name);
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>탐색 선택자</h1>
+        <ul id="menu">
+            <li>내용1</li>
+            <li>내용2</li>
+            <li>내용3</li>
+            <li>내용4</li>
+            <li>내용5</li>
+            <li>내용6</li>
+        </ul>
+    </div>
+    <script>
+        $(function () {
+            // $("#menu li:first").css({ "background-color" : "#ff0" });
+
+            // $("#menu li:last").css({ "background-color" : "#0ff" });
+
+            // $("#menu li:even").css({ "background-color" : "#0ff" });
+
+            // $("#menu li:odd").css({ "background-color" : "#0ff" });
+
+            // $("#menu li").eq(2).css({ "background-color" : "#0ff" });
+
+            // $("#menu li:lt(2)").css({ "background-color" : "#0ff" });
+
+            // $("#menu li:gt(2)").css({ "background-color" : "#0ff" });
+
+            // $("#menu li:first-of-type").css({ "background-color" : "#0ff" });
+
+            // $("#menu li:last-of-type").css({ "background-color" : "#0ff" });
+
+            // $("#menu li:nth-child(1)").css({ "background-color": "#0ff"});
+
+            // $("#menu li:nth-child(2n)").css({ "background-color": "#0ff"});
+
+            $("#menu li:nth-last-child(2)").css({ "background-color": "#0ff"});
+        });
+    </script>
+</body>
+
+</html>

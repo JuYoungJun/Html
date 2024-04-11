@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAVASCRIPT 함수</title>
+</head>
+
+<body>
+    <script>
+        // function 함수이름(매개변수1, 매개변수2){
+        //     //함수 호출하면 실행될 코드
+        //     let result = 매개변수1 + 매개변수2;
+        //     let minus = 매개변수1 - 매개변수2;
+        //     console.log(result);
+        //     console.log(minus);
+        // }
+
+        // 함수이름(150, 160);
+
+        // let num = 100;
+
+        (function () { //->전역 함수 그아래있는 함수는 지역함수이다
+            let num = 100;
+            function menu() {
+                num += 100;
+                alert(num);
+            }
+            menu();
+        }()); // -> ()이괄호는 즉시 실행 함수이다
+
+        (function () {
+            let num = 100;
+            function menu() {
+                alert(num);
+            }
+        }());
+
+        // let time = 600;
+        // let min = "";
+        // let sec = "";
+
+        // let x = setInterval(function () {
+        //     min = parseInt(time / 60);
+        //     sec = time % 60;
+
+        //     document.getElementById("demo").innerHTML = min + "분" + sec + "초";
+
+        //     if (time < 0) {
+        //         clearInterval(x)
+        //         document.getElementById("demo").innerHTML = "시간끝";
+        //     }
+        // }, 1000);
+    </script>
+
+    <!-- <div id="demo"></div> -->
+</body>
+
+</html>
