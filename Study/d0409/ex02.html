@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(function () {
+            $(".txt1").animate({ marginLeft: "300px" }, 1000);
+
+            $(".txt2").delay(3000).animate({ marginLeft: "300px" }, 1000);
+
+            $(".btn1").on("click", moveElement);
+
+            function moveElement( ) {
+                $(".txt3").animate({ marginLeft: "+=50px" }, 800);
+
+                $(".txt4").animate({ marginLeft: "+=50px" }, 800);
+                $(".txt4").stop();
+
+                $(".txt5").animate({ marginLeft: "+=50px" }, 800);
+                $(".txt5").stop(true, true)
+            }
+        });
+    </script>
+    <style>
+        p {
+            width: 110px;
+            text-align: center;
+        }
+
+        .txt1 {
+            background-color: aqua;
+        }
+
+        .txt2 {
+            background-color: pink;
+        }
+
+        .txt3 {
+            background-color: orange;
+        }
+
+        .txt4 {
+            background-color: gray;
+        }
+
+        .txt5 {
+            background-color: gold;
+        }
+    </style>
+
+    <p class="txt1">효과1</p>
+    <p class="txt2">효과2<br> delay(3000)</p>
+
+    <p><button class="btn1">50px 전진</button></p>
+    <p class="txt3">효과3</p>
+    <p class="txt4">효과4<br>stop( )</p>
+    <p class="txt5">효과5<br>stop(true, true)</p>
+</body>
+
+<!-- AJAX -->
+
+<!-- 서버와 비동기적으로 주고받는 자바스크립트 기술.
+1.사용자의 행동에 의해 발생(ex.버튼 클릭)
+2. 자바스크립트가 XMLHTTPRequest 객체/ 이 객체를 사용해서 서버에 다 비동기적으로 요청 합니다.
+3. 크라이언트에서 서버로부터 받은 데이터를 가지고 웹 페이지의 일부분을 갱신
+4. 페이지의 새로고침 없이도 데이터 교환이 이뤄짐. 이로인해서 사용자 입장에서 편리함. 
+
+사전지식!
+서버에 대한 이해가 필요함
+서버란?
+유저가 데이터를 요구 하면 주는 프로그램
+요청을 상세하게!
+
+get요청
+1. 브라우저 주소창에 URL을 입력한다.
+2. 버튼으로 get요청을 한다
+폼을 만들어서 폼으로 겟요청을 날린다.
+<form action="naver.com" type="get">
+    <buttom type="submit">
+3. AJAC로 GET요청하기 (새로고침 없이 요청가능)
+장점: 부드럽게 동작하는 웹페이지 만들기 가능.
+-->
+</html>
+
+

@@ -1,0 +1,168 @@
+/* 폰트 설정 */
+@font-face { 
+    font-family: 'BMJUA'; 
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); 
+    font-weight: normal; 
+    font-style: normal; 
+}
+
+/* 애니메이션 설정 */
+@keyframes done {
+    70% {
+        transform: scale(1.2)
+    }
+    100% {
+        transform: scale(1)
+    }
+}
+
+/* HTML 요소에 폰트 적용 */
+html {
+    font-family: BMJUA
+}
+
+/* 모든 요소의 상자 모델 설정 */
+*, ::before, ::after {
+    box-sizing: border-box
+}
+
+/* 기본 요소 초기화 */
+body, div, button, h1 {
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    background: 0
+}
+
+/* 타이틀 스타일 */
+#title {
+    font-size: 3rem;
+    margin: 2rem 0
+}
+
+/* Wrapper 스타일 */
+#wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px
+}
+
+/* 숫자 영역 스타일 */
+#numbers {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 30px;
+    border: 3px solid pink;
+    border-radius: 20px
+}
+
+/* 숫자 공 스타일 */
+#numbers .ball {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    line-height: 80px;
+    font-size: 48px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+/* 각 숫자별 색상 스타일 */
+#numbers .ball.blue {
+    background: #69c8f2
+}
+
+#numbers .ball.red {
+    background:#ff7272
+}
+
+#numbers .ball.grey {
+    background:#aaa
+}
+
+#numbers .ball.bonus {
+    background: #b0d840
+}
+
+/* 완료된 숫자 애니메이션 스타일 */
+#numbers .ball.done {
+    animation: done .3s linear
+}
+
+/* 마지막 숫자 공 스타일 */
+#numbers .ball:last-child {
+    margin-right: 0
+}
+
+/* 플러스 기호 스타일 */
+#numbers .plus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 48px;
+    font-weight: bold
+}
+
+/* 버튼 스타일 */
+#btn {
+    position: relative;
+    display: block;
+    padding: 1rem 2.5rem 1.6rem;
+    background: #fff;
+    color: #666;
+    border: 2px solid #666;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: .5s;
+    user-select: none
+}
+
+#btn:hover {
+    padding: 1rem 2.5rem 1rem;
+    margin-top: .6rem;
+    background: #999;
+    color: #fff
+}
+
+#btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    height: .6rem;
+    width: 100%;
+    background-image: repeating-linear-gradient(45deg, #666, #666 1px, transparent 2px, transparent 5px);
+    border-top: 1px solid #666;
+    transition: .5s
+}
+
+#btn:hover::after {
+    transform: translateY(.6rem)
+}
+
+/* 버튼 숨기는 스타일 */
+#btn.hide {
+    transform: scale(0)
+}
+
+/* 미디어 쿼리 설정 */
+@media screen and (max-width: 800px) {
+    #numbers {
+        flex-direction: column;
+        align-items: center
+    }
+
+    #numbers .ball {
+        margin-right: 0;
+        margin-bottom: 10px
+    }
+
+    #numbers .ball:last-child {
+        margin-bottom: 0
+    }
+}

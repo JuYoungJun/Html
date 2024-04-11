@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+
+    <style>
+        .hidden {
+            /* 요소가 완전히 투명해지지만 공간은 차지하고 있다 */
+            opacity: 0;
+            /* 요소를 원래 위치에서 아래로 20px 이동 */
+            transform: translateY(20px);
+            /* 애니메이션 효과가 들어감 1.5초 지속 시작 과 끝은 느리게, 중간은 빠르게*/
+            transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        #section1 {
+            background-color: red;
+        }
+
+        #sction2 {
+            background-color: gray;
+        }
+
+        #sction3 {
+            background-color: aqua;
+        }
+
+        #sction2 {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="section1" class="section hidden">
+        <h1>1번 섹션</h1>
+    </div>
+
+    <div id="section2" class="section hidden">
+        <h1>2번 섹션</h1>
+    </div>
+
+    <div id="section3" class="section hidden">
+        <h1>3번 섹션</h1>
+    </div>
+
+    <div id="section4" class="section hidden">
+        <h1>4번 섹션</h1>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                $('.hidden').each(function (i) {
+                    let bottomOfObject = $(this).offset().top + $(this).outerHeight();
+                    let bottomOfWindow = $(window).scrollTop() + $(window).height() * 1.2;
+
+                    if (bottomOfWindow > bottomOfObject) {
+                        $(this).addClass('show');
+                    }
+                })
+            })
+        })
+    </script>
+</body>
+
+</html>

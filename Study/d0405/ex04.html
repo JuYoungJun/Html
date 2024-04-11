@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        $(function(){
+            $(document).ready(function(){
+                let h1 = $(".img1").height();
+                console.log("ready :", h1);
+            });
+
+            $(window).on("load", function(){
+                let h2 = $(".img1").height();
+                console.log("load :", h2)
+            });
+        });
+    </script>
+    <p>
+        <img src="http://place-hold.it/300X300" class="img1">
+    </p>
+</body>
+</html>
