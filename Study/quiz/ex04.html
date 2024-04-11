@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <textarea cols="10" rows="10" onkeydown="change()" style="resize: none;"></textarea>
+    <br>입력문자수 : <span id="result"></span>
+
+    <script>
+        $("textarea").on("input", function () {
+            let text = $(this).val();
+            $("#result").text(text.length);
+        })
+    </script>
+</body>
+
+</html>

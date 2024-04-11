@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //6번문제
+        //엔터없이 출력 하는거
+        function output() {
+            let input_txt = $("#input_id").val();
+            $('#output_id').append('<sapn>' + input_txt + '</span><br>')
+        }
+    </script>
+
+
+    <input type="text" id="input_id" name="input_name">
+    <button onclick="output()">출력하기</button>
+    <div id="output_id"></div>
+
+    <!-- 썜코드 -->
+    값<input type="search" name="v1" id="v1">
+    <button id="saveBtn">저장</button>
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function(){
+            let arr = [];
+            $("#saveBtn").click(function(){
+                let v1 = $("#v1").val();
+                arr.push(v1);
+                list();
+            });
+
+            function list(){
+                let msg = "";
+                $.each(arr, function(index, value){
+                    msg += value + "<br>";
+                });
+                $("#result").html(msg);
+            }
+        });
+    </script>
+</body>
+
+</html>

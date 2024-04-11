@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        function up (){
+            var count = $("#quantity").val();
+            $("#auantity").val(parseInt(count) + 1);
+        };
+
+        function down() {
+            var count = $("#quantity").val();
+            if(count != 1){
+                $("#quantity").val(parseInt(count) - 1);
+            }
+        }
+    </script>
+
+    갯수 : <input type="text" name="quantity" id="quantity" value="1">
+    <button id=""></button>
+    <button id=""></button>
+
+</body>
+
+</html>

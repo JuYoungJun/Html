@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+
+    <style>
+        .btn {
+            background-color: transparent;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // function output() {
+        //     let input_txt;
+        //     input_txt = $('#input_id').val();
+        //     $('#output_id').html('<span>' + input_txt + '</span>');
+        // }
+
+        // function output() {
+        //     let input_txt = "";
+        //     input_txt += $('#input_id').val();
+        //     for (let i = 0; i < persons.length; i++) {
+        //         let person = persons[i];
+        //         input_txt += $('#input_id').val();
+        //     }
+        //     $('#output_id').html('<span>' + input_txt + '</span>')
+        // }
+
+        //엔터없이 출력 하는거
+        // function output() {
+        //     let input_txt = $("#input_id").val();
+        //     $('#output_id').append('<sapn>' + input_txt + '</span><br>')
+        // }
+
+        //엔터 키로도 출력 할수있게 한거
+        //$(document).keypress(function(e){
+        //    if(e.keyCode === 13){
+        //        e.preventDefault;
+        //        output();
+        //    }
+        //});
+
+        //function output() {
+        //    let input_txt = $('#input_id').val(); // 입력된 텍스트 값을 가져오는거
+        //    $('#output_id').append('<span>' + input_txt + '</span><br>'); // 결과를 추가하고 줄 바꿈합니다.
+        //    $('#input_id').val(''); // 입력란 비우기
+        //}
+
+        //삭제 까지 하는거
+        $(document).keypress(function (e) {
+            if (e.keyCode === 13) {
+                e.preventDefault;
+                output();
+            }
+        });
+
+        function output() {
+            let input_txt = $('#input_id').val(); // 입력된 텍스트 값을 가져오는거
+            let newSpan = $('<span>' + input_txt + '</span><br>');//새로운 결과 생성
+            let deleteButton = $('<button onclick = "deletResult(this)" class = "btn" >X</button>');
+            newSpan.append(deleteButton);//결과 삭제 버튼
+            $('#output_id').append(newSpan);//결과를 추가하고 줄 바꿈
+            $('#input_id').val('');//입력란 비우기
+        }
+
+        //결과 삭제 함수
+        function deletResult(element) {
+            $(element).parent().remove();//삭제 버튼의 부모 요소의 결과를 삭제한다
+        }
+    </script>
+
+
+    <input type="text" id="input_id" name="input_name">
+    <button onclick="output()">출력하기</button>
+    <div id="output_id"></div>
+
+
+    <button style="border: 0;"></button>
+    <!-- <p>값 : <input type="text" name="v1" id="v1"> <button>저장</button></p> -->
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dark.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+
+<body>
+    <div class="darkmode">
+        <button class="darkmode_btn" type="button">
+            <span class="darkmode_span">🌗 다크 모드로 보기</span>
+        </button>
+    </div>
+
+    <script>
+        let darkmode_switch = true
+
+        $(".darkmode_btn").on("click", function () {
+            count = !count;
+            if (count === true) {
+                $(".white-box").removeClass("dark");
+                $(".contact_icon").removeClass("dark");
+                $(".darkmode_span").html("🌗 다크 모드로 보기");
+            } else {
+                $(".white-box").addClass("dark");
+                $(".contact_icon").addClass("dark");
+                $(".darkmode_span").html("☀️ 일반 모드로 보기");
+            }
+        });
+    </script>
+</body>
+
+</html>

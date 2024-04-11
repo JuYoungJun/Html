@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#plus").click(function () {
+                let v1 = parseInt($("#v1").val());
+                let v2 = parseInt($("#v2").val());
+                $("#result").val(v1 + v2);
+            });
+
+            $("#minus").click(function () {
+                let v1 = parseInt($("#v1").val());
+                let v2 = parseInt($("#v2").val());
+                $("#result").val(v1 - v2);
+            })
+
+            $("#multiply").click(function () {
+                let v1 = parseInt($("#v1").val());
+                let v2 = parseInt($("#v2").val());
+                $("#result").val(v1 * v2);
+            })
+
+            $("#divide").click(function () {
+                let v1 = parseInt($("#v1").val());
+                let v2 = parseInt($("#v2").val());
+                $("#result").val(v1 / v2);
+            });
+        });
+    </script>
+
+    <p>값1 : <input type="text" name="v1" id="v1"></p>
+    <p>값2 : <input type="text" name="v2" id="v2"></p>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+    <button id="multiply">*</button>
+    <button id="divide">/</button>
+    
+    <br><br>결과값 : <input type="text" id="result" name="result">
+</body>
+
+</html>

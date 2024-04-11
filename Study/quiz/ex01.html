@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#login button").on("click", function () {
+                let User_id = $("#User_id").val();
+                let User_pwd = $("#User_pwd").val();
+
+                if (User_id.length === 0) {
+                    alert("아이디를 입력해주세요.")
+                } else if (User_pwd.length === 0) {
+                    alert("비밀번호를 입력해주세요.")
+                }
+            })
+        })
+        // $("#login").on("click", function () {
+        //     let User_id = $("#User_id").val();
+        //     let User_pwd = $("#user_pwd").val();
+
+        //     if (User_id == "") {
+        //         alert("아이디를 입력해주세요.")
+        //     } else if (User_pwd = "") {
+        //         alert("비밀번호를 입력해주세요.")
+        //     }
+        // });
+    </script>
+
+    <form action="" id="login">
+        <p>아이디 : <input type="text" id="User_id"></p>
+        <p>비밀번호 : <input type="password" id="User_pwd"></p>
+        <button type="button">로그인</button>
+    </form>
+
+
+</body>
+
+</html>

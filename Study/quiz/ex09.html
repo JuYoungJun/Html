@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <!-- 쌤코드 -->
+    <form>
+        <input type="text" id="item" autofocus="true">
+        <button type="button" id="add" class="button">추가</button>
+        <div id="itemList"></div>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            let itemlist = [];
+
+            $("#add").click(function () {
+                let item = $("#item").val();
+                if (item) {
+                    itemlist.push(item);
+                    $("#item").val("").focus();
+                    showList();
+                    console.log(itemList);
+                }
+            });
+
+            function showList() {
+                let list = "<ul>";
+                $.each(itemlist, function (index, item) {
+                    list += "<li>" + item + "&nbsp;<span class='close' id='" + index + "'>X</span></li>";
+                });
+
+                list += "</ul>";
+
+                $("#itemList").html(list);
+                console.log(list);
+                $(".close").click(function () {
+                    removeList($(this).attr("id"));
+                });
+
+                function removeList(id) {
+                    console.log("remove list");
+                    itemlist.splice(id, 1);
+                    showList();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
