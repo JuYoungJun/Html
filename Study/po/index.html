@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포켓몬 도감</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="./po.css">
+    <link rel="stylesheet" href="./po.js">
+</head>
+
+<body>
+
+    <div id="container">
+        <h1>포켓몬 도감</h1>
+
+        <form id="search-form">
+            <input type="text" id="pokemon-name" name="pokemon-name" placeholder="포켓몬 이름을 입력하세요">
+            <button id="search-button" type="submit">검색</button>
+        </form>
+
+        <div id="pokemon-info">
+            <h2>포켓몬 정보</h2>
+            <p id="pokemon-data">포켓몬 정보가 여기에 표시됩니다.</p>
+        </div>
+
+        <button id="dark-mode-toggle">다크 모드</button>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // 포켓몬 정보를 가져오는 함수
+            function getPokemonInfo(pokemonName) {
+                var url = "https://pokemon.fandom.com/ko/wiki/" + encodeURIComponent(pokemonName);
+
+                $.get(url, function (data) {
+                    // 가져온 데이터에서 원하는 정보를 추출하고 표시할 수 있습니다.
+                    var info = $(data).find(".portable-infobox").html();
+                    $("#pokemon-data").html(info);
+                }).fail(function () {
+                    // 오류 발생 시 알림창을 띄우고 확인 버튼을 누르면 새 창에 해당 사이트를 열도록 합니다.
+                    alert("오류가 발생했습니다. 확인을 누르면 다른 창에 해당 포켓몬을 볼 수 있습니다.");
+                    window.open(url, "_blank");
+                });
+            }
+
+            // 사용자 입력 처리
+            $("#search-form").submit(function (event) {
+                event.preventDefault();
+                var pokemonName = $("#pokemon-name").val().trim();
+                if (pokemonName !== "") {
+                    getPokemonInfo(pokemonName);
+                }
+            });
+
+            // 다크 모드 토글
+            $("#dark-mode-toggle").click(function () {
+                $("body").toggleClass("dark-mode");
+                $("#container").toggleClass("dark-mode");
+                $("#pokemon-info").toggleClass("dark-mode");
+            });
+        });
+    </script>
+
+</body>
+
+</html>

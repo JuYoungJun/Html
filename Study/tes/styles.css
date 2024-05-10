@@ -1,0 +1,54 @@
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
+    /* 상대 위치 지정 */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: calc(100% - 40px);
+    /* 너비를 조정하여 눈 모양 아이콘이 오른쪽 끝에 고정 */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 5px;
+    /* 아이콘이 오른쪽 끝에 위치하도록 조정 */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+    /* 사용자가 아이콘을 드래그하지 못하도록 설정 */
+}
+
+.error-message {
+    color: red;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>회원가입</h2>
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="username">사용자명:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">이메일:</label>
+                <input type="text" id="emailPrefix" name="emailPrefix" required>
+                @
+                <select id="emailDomain" name="emailDomain">
+                    <option value="naver.com">naver.com</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="custom">직접 입력</option>
+                </select>
+                <input type="text" id="customDomain" name="customDomain" style="display:none;">
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="togglePassword" class="eye-icon">👁️</span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">비밀번호 확인:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div class="error-message"></div>
+            <button type="submit">가입하기</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
