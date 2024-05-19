@@ -35,11 +35,11 @@
                 var url = "https://pokemon.fandom.com/ko/wiki/" + encodeURIComponent(pokemonName);
 
                 $.get(url, function (data) {
-                    // 가져온 데이터에서 원하는 정보를 추출하고 표시할 수 있습니다.
+                    // 가져온 데이터에서 원하는 정보를 추출하고 표시하느 코드
                     var info = $(data).find(".portable-infobox").html();
                     $("#pokemon-data").html(info);
                 }).fail(function () {
-                    // 오류 발생 시 알림창을 띄우고 확인 버튼을 누르면 새 창에 해당 사이트를 열도록 합니다.
+                    // 오류 발생 시 알림창을 띄우고 확인 버튼을 누르면 새 창에 해당 사이트를 뜨게 하는부분
                     alert("오류가 발생했습니다. 확인을 누르면 다른 창에 해당 포켓몬을 볼 수 있습니다.");
                     window.open(url, "_blank");
                 });
